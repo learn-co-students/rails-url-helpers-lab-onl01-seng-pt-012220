@@ -8,11 +8,11 @@ class StudentsController < ApplicationController
   def show
   end
 
-  def activate_student_path
+  def activate
     @student = set_student
     @student.active ? (@student.active = false) : (@student.active = true)
     @student.save
-    redirect_to student_path(@student)
+    redirect '/show'
   end
   
   private
